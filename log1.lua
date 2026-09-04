@@ -569,7 +569,7 @@ wall.ButtonDrawable.setColorFilter(PorterDuffColorFilter(0xFF00FFEE, PorterDuff.
 function wall.OnCheckedChangeListener()
   if wall.checked then
     antiC4droid()
-    HexPatches.MemoryPatch("libunity.so", 0x51EC608, "h1F 20 03 D5")
+    HexPatches.MemoryPatch("libunity.so", 0x8CF23C8, "h20 00 80 D2 C0 03 5F D6");
     idkcstmToast("Wallhack Activated")
    else
     HexPatches.MemoryPatch("libunity.so", 0x51EC608, "h80 00 00 36")
@@ -981,7 +981,7 @@ function autoBypass()
   end)
   
   -- Isang beses na lang lalabas ang Toast na ito
-  showToast("BYPASS ACTIVATED")
+  showToast("BYPASS ACTIVATED1")
 end
 
 -- I-load ang bypass nang hindi binibigla ang main thread sa pagsisimula
