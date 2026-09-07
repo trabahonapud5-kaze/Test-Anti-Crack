@@ -908,8 +908,7 @@ local masterUiButtons = {
   skin52, skin3, skin70, skin2, skin4, skin34,
   ak117lava, ak117, so14, qq9,
   scissors, tomahawk, saber, fiery,
-  sophia, lazarus,
-  F309, F310, F180,
+  sophia, lazarus, F180,
 }
 
 -- Non-blocking Game & Lib Checker gamit ang thread/task
