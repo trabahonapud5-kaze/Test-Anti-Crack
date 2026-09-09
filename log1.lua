@@ -186,12 +186,33 @@ function floatToHexLE(float)
 end
 
 function getProcessId(processName)
+  -- 1. Unang subok gamit ang pgrep (sakaling gumana sa ilang rooted/virtual environment)
   local file = io.popen("pgrep -f " .. processName)
   if file then
     local pid = file:read("*a"):match("%d+")
     file:close()
-    return pid
+    if pid then return pid end
   end
+
+  -- 2. Fallback gamit ang Android ActivityManager (Mas epektibo sa DualSpace / Virtual Environments)
+  local pcallStatus, pidResult = pcall(function()
+    local activityManager = activity.getSystemService(Context.ACTIVITY_SERVICE)
+    local runningProcesses = activityManager.getRunningAppProcesses()
+    if runningProcesses then
+      for i = 0, runningProcesses.size() - 1 do
+        local procInfo = runningProcesses.get(i)
+        if procInfo.processName == processName then
+          return tostring(procInfo.pid)
+        end
+      end
+    end
+    return nil
+  end)
+
+  if pcallStatus and pidResult then
+    return pidResult
+  end
+
   return nil
 end
 
@@ -976,7 +997,7 @@ function autoBypass()
   end)
   
   -- Isang beses na lang lalabas ang Toast na ito
-  showToast("BYPASS ACTIVATED")
+  showToast("BYPASS ACTIVATED FOR TEST")
 end
 
 -- I-load ang bypass nang hindi binibigla ang main thread sa pagsisimula
