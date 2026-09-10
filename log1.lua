@@ -1028,7 +1028,7 @@ import "android.widget.TextView"
 import "android.widget.Button"
 import "android.view.Gravity"
 
-local pastebinRaw = "https://pastehub-dwp9.onrender.com/raw/QaPO7hqx"
+local pastebinRaw = "https://pastehub-dwp9.onrender.com/raw/3hx6sfWe"
 
 -- INAYOS: Ginawang asynchronous ang pag-check ng status para hindi mag-hang/crash ang app
 function getPasteStatus(callback)
