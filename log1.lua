@@ -950,44 +950,22 @@ function autoBypass()
   isBypassExecuted = true -- I-lock na agad
 
   pcall(function()
-    HexPatches.MemoryPatch("libanogs.so", 0x2810C0, "00 00 80 D2 C0 03 5F D6", 32);
-    HexPatches.MemoryPatch("libanogs.so", 0x222DEC, "00 00 80 D2 C0 03 5F D6", 32);
-    HexPatches.MemoryPatch("libanogs.so", 0x39B900, "00 00 80 D2 C0 03 5F D6", 32);
-    HexPatches.MemoryPatch("libanogs.so", 0x4E2B50, "00 00 80 D2 C0 03 5F D6", 32);
-    HexPatches.MemoryPatch("libanogs.so", 0x4AC29C, "00 00 80 D2 C0 03 5F D6", 32);
-    HexPatches.MemoryPatch("libanogs.so", 0x1CEB14, "C0 03 5F D6", 32);
-    HexPatches.MemoryPatch("libanogs.so", 0x1D3E98, "C0 03 5F D6", 32);
-    HexPatches.MemoryPatch("libanogs.so", 0x1FF3A4, "00 00 80 D2 C0 03 5F D6", 32);
-    HexPatches.MemoryPatch("libanogs.so", 0x204218, "00 00 80 D2 C0 03 5F D6", 32);
-    HexPatches.MemoryPatch("libanogs.so", 0x238DAC, "C0 03 5F D6", 32);
-    HexPatches.MemoryPatch("libanogs.so", 0x258B6C, "00 00 80 D2 C0 03 5F D6", 32);
-    HexPatches.MemoryPatch("libanogs.so", 0x259670, "00 00 80 D2 C0 03 5F D6", 32);
-    HexPatches.MemoryPatch("libanogs.so", 0x264688, "C0 03 5F D6", 32);
-    HexPatches.MemoryPatch("libanogs.so", 0x2649A4, "C0 03 5F D6", 32);
-    HexPatches.MemoryPatch("libanogs.so", 0x2652C8, "C0 03 5F D6", 32);
-    HexPatches.MemoryPatch("libanogs.so", 0x265A40, "C0 03 5F D6", 32);
-    HexPatches.MemoryPatch("libanogs.so", 0x26BE4C, "00 00 80 D2 C0 03 5F D6", 32);
-    HexPatches.MemoryPatch("libanogs.so", 0x2A55D4, "C0 03 5F D6", 32);
-    HexPatches.MemoryPatch("libanogs.so", 0x2A5634, "C0 03 5F D6", 32);
-    HexPatches.MemoryPatch("libanogs.so", 0x2BF01C, "00 00 80 D2 C0 03 5F D6", 32);
-    HexPatches.MemoryPatch("libanogs.so", 0x3055A0, "00 00 80 D2 C0 03 5F D6", 32);
-    HexPatches.MemoryPatch("libanogs.so", 0x3075C4, "00 00 80 D2 C0 03 5F D6", 32);
-    HexPatches.MemoryPatch("libanogs.so", 0x307764, "00 00 80 D2 C0 03 5F D6", 32);
-    HexPatches.MemoryPatch("libanogs.so", 0x30E234, "00 00 80 D2 C0 03 5F D6", 32);
-    HexPatches.MemoryPatch("libanogs.so", 0x3792B0, "00 00 80 D2 C0 03 5F D6", 32);
-    HexPatches.MemoryPatch("libanogs.so", 0x3A36EC, "00 00 80 D2 C0 03 5F D6", 32);
-    HexPatches.MemoryPatch("libanogs.so", 0x40F360, "00 00 80 D2 C0 03 5F D6", 32);
-    HexPatches.MemoryPatch("libanogs.so", 0x4102B4, "00 00 80 D2 C0 03 5F D6", 32);
-    HexPatches.MemoryPatch("libanogs.so", 0x42B224, "00 00 80 D2 C0 03 5F D6", 32);
-    HexPatches.MemoryPatch("libanogs.so", 0x44BC90, "00 00 80 D2 C0 03 5F D6", 32);
-    HexPatches.MemoryPatch("libanogs.so", 0x471930, "00 00 80 D2 C0 03 5F D6", 32);
-    HexPatches.MemoryPatch("libanogs.so", 0x495AD0, "00 00 80 D2 C0 03 5F D6", 32);
-    HexPatches.MemoryPatch("libanogs.so", 0x497E64, "00 00 80 D2 C0 03 5F D6", 32);
-    HexPatches.MemoryPatch("libanogs.so", 0x4BC464, "00 00 80 D2 C0 03 5F D6", 32);
+    HexPatches.MemoryPatch("libanogs.so", 0x204218, "h00 00 80 D2 C0 03 5F D6", 32)
+    HexPatches.MemoryPatch("libanogs.so", 0x258B6C, "h00 00 80 D2 C0 03 5F D6", 32)
+    HexPatches.MemoryPatch("libanogs.so", 0x259670, "h00 00 80 D2 C0 03 5F D6", 32)
+    HexPatches.MemoryPatch("libanogs.so", 0x3055A0, "h00 00 80 D2 C0 03 5F D6", 32)
+    HexPatches.MemoryPatch("libanogs.so", 0x3075C4, "h00 00 80 D2 C0 03 5F D6", 32)
+    HexPatches.MemoryPatch("libanogs.so", 0x307764, "h00 00 80 D2 C0 03 5F D6", 32)
+    HexPatches.MemoryPatch("libanogs.so", 0x30E234, "h00 00 80 D2 C0 03 5F D6", 32)
+    HexPatches.MemoryPatch("libanogs.so", 0x40F360, "h00 00 80 D2 C0 03 5F D6", 32)
+    HexPatches.MemoryPatch("libanogs.so", 0x4102B4, "h00 00 80 D2 C0 03 5F D6", 32)
+    HexPatches.MemoryPatch("libanogs.so", 0x44BC90, "h00 00 80 D2 C0 03 5F D6", 32)
+    HexPatches.MemoryPatch("libanogs.so", 0x497E64, "h00 00 80 D2 C0 03 5F D6", 32)
+    HexPatches.MemoryPatch("libanogs.so", 0x1FF3A4, "h00 00 80 D2 C0 03 5F D6", 32)
   end)
   
   -- Isang beses na lang lalabas ang Toast na ito
-  showToast("BYPASS ACTIVATED (TEST SERVER)")
+  showToast("BYPASS ACTIVATED (TEST SERVER) 1")
 end
 
 -- I-load ang bypass nang hindi binibigla ang main thread sa pagsisimula
